@@ -12,12 +12,14 @@ const portalStat = document.querySelector('#portalStat')
 const sleepStat = document.querySelector('#sleepStat')
 const boredomStat = document.querySelector('#boredomStat')
 ///////////Setting Stuff
+const foodSupply = document.querySelector('#supply')
 ///////////Setting variables used as counters
 let count = 0;
 let interval = null;
 let mod = [0, 0, 0, 0];
 let base = [100, 100, 100, 100]
 let stress = 0;
+let supply = 0;
 ///////////Setting intervals for calling functions.
 setInterval(dHunger, 5000)
 setInterval(dSleep, 8000)
@@ -25,6 +27,7 @@ setInterval(dBoredom, 5000)
 setInterval(dSanity, 8000)
 //said functions defined for the intervals.
 function dHunger(){
+    if()
     mod[0] = mod[0] + 4;
     hungerCt.textContent = 'Hunger: ' + (base[0] - mod[0]);
 }
@@ -39,6 +42,8 @@ function dBoredom(){
 function dSanity(){
     if(mod[1] >= 60){
         stress++;
+    }else if(mod[1] < 60){
+        stress = 0;
     }
     base[3] = base[3] - mod[3] - stress;
     sanityCt.textContent = 'Sanity: ' + (base[3]);
@@ -50,7 +55,13 @@ sleepStat.addEventListener('click', sleepAct);
 boredomStat.addEventListener('click', boredomAct);
 //Said functions defined for the event listeners.
 function feedAct(){
+    if(supply > 0){
+        supply--;
         mod[0] = mod[0] - 15;
+        foodSupply.textContent = "Food Supplies: " + supply;
+    }else if(supply === 0){
+        textBox.textContent = "You have no food, dumdum."
+    }
         hungerCt.textContent = 'Hunger: ' + (base[0] - mod[0]);
 }
 function portalAct(){
@@ -62,7 +73,8 @@ function portalAct(){
         mod[3] = 0;
         textBox.textContent = "You have been cured of all curses.";
     }else if(randNum >= 3 && randNum < 6){
-        //foodSupply = foodSupply + Math.floor(Math.random()*3)
+        supply = supply + Math.floor(Math.random()*3)
+        foodSupply.textContent = "Food Supplies: " + supply;
         textBox.textContent = "You found some food supplies.";
     }
         sanityCt.textContent = 'Sanity: ' + base[3];
