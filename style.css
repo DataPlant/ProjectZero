@@ -1,0 +1,9 @@
+body {
+    background-position: center;
+    text-align: center;
+    display: block;
+}
+.stats {
+    text-align: left;
+    margin-left: 45%;
+}
