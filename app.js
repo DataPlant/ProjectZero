@@ -37,7 +37,7 @@ function dBoredom(){
     boredomCt.textContent = 'Boredom: ' + (base[2] - mod[2]);
 }
 function dSanity(){
-    if(mod[1] >= 40){
+    if(mod[1] >= 60){
         stress++;
     }
     base[3] = base[3] - mod[3] - stress;
@@ -48,16 +48,22 @@ feedStat.addEventListener('click', feedAct);
 portalStat.addEventListener('click', portalAct);
 sleepStat.addEventListener('click', sleepAct);
 boredomStat.addEventListener('click', boredomAct);
-//said functions defined for the event listeners.
+//Said functions defined for the event listeners.
 function feedAct(){
-        mod[0] = mod[0] - 2;
+        mod[0] = mod[0] - 15;
         hungerCt.textContent = 'Hunger: ' + (base[0] - mod[0]);
 }
 function portalAct(){
     let randNum = Math.floor(Math.random()*10)
-    if(randNum < 5){
-        mod[3] = mod[3] + 2;
+    if(randNum < 2){
+        mod[3] = mod[3] + 1;
         textBox.textContent = "You have been cursed, sanity loss rate +" + mod[3];
+    }else if(randNum >= 2 && randNum < 3){
+        mod[3] = 0;
+        textBox.textContent = "You have been cured of all curses.";
+    }else if(randNum >= 3 && randNum < 6){
+        //foodSupply = foodSupply + Math.floor(Math.random()*3)
+        textBox.textContent = "You found some food supplies.";
     }
         sanityCt.textContent = 'Sanity: ' + base[3];
 }
