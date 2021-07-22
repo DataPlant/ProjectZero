@@ -27,7 +27,6 @@ setInterval(dBoredom, 5000)
 setInterval(dSanity, 8000)
 //said functions defined for the intervals.
 function dHunger(){
-    if()
     mod[0] = mod[0] + 4;
     hungerCt.textContent = 'Hunger: ' + (base[0] - mod[0]);
 }
