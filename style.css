@@ -4,6 +4,6 @@ body {
     display: block;
 }
 .stats {
-    text-align: left;
-    margin-left: 45%;
+    text-align: right;
+    margin-right: 45%;
 }
