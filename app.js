@@ -118,9 +118,10 @@ class Creature {
             pet.mod[3] = 0;
             textBox.textContent = "You have been cured of all curses.";
         }else if(randNum >= 3 && randNum < 6){
-            pet.supply = pet.supply + Math.floor(Math.random()*3) + 1;
+            let newsup = Math.floor(Math.random()*3) + 1;
+            pet.supply = pet.supply + newsup;
             foodSupply.textContent = "Food Supplies: " + pet.supply;
-            textBox.textContent = "You found some food supplies.";
+            textBox.textContent = "You found " + newsup + " food supplies.";
         }else if(randNum ===6){
             pet.treats = pet.treats + 1;
             treatSupply.textContent = "Sanity Treats: " + pet.treats;
@@ -153,15 +154,39 @@ function type1f(){
     image.src = 'https://tataromhome.files.wordpress.com/2018/11/ro-poring.gif?w=200';
     pet = new Creature('Poring', [99,99,99,99], [0,0,0,0], 0, 0, 0);
     petName.textContent = pet.name;
+    foodSupply.textContent = "Food Supplies: " + pet.supply;
+    treatSupply.textContent = "Sanity Treats: " + pet.treats;
     pet.intervalSet();
     pet.addingListeners();
+    endChoice();
 }
 function type2f(){
     image.src = 'https://lh5.googleusercontent.com/-aYBsxblX1cI/VArWJHoic-I/AAAAAAAAABU/wBtt8zUALP8/s0-U-I/king_deviling.gif'
-    pet = new Creature('King Poring', [150,99,99,50], [0,0,0,0], 0, 0, 0);
+    pet = new Creature('King Poring', [99,99,99,99], [0,0,0,0], 0, 10, 0);
+    petName.textContent = pet.name;
+    foodSupply.textContent = "Food Supplies: " + pet.supply;
+    treatSupply.textContent = "Sanity Treats: " + pet.treats;
+    pet.intervalSet();
+    pet.addingListeners();
+    endChoice();
+}
+function type3f(){
+    image.src = 'http://reunite-ro.com/wp-content/uploads/2016/05/king_ghostring.gif'
+    pet = new Creature('Ice King Poring', [99,99,99,50], [0,0,0,0], 0, 0, 5);
+    petName.textContent = pet.name;
+    foodSupply.textContent = "Food Supplies: " + pet.supply;
+    treatSupply.textContent = "Sanity Treats: " + pet.treats;
+    pet.intervalSet();
+    pet.addingListeners();
+    endChoice();
+}
+function type4f(){
+    image.src = 'https://static.wixstatic.com/media/5f276a_d23ea02565744b78b90930185d2f35ff~mv2.gif'
+    pet = new Creature('Waterling', [99,99,99,99], [0,0,0,0], 5, 0, 0);
     petName.textContent = pet.name;
     pet.intervalSet();
     pet.addingListeners();
+    endChoice();
 }
 ///////////Textbox
 const textBox = document.querySelector('#text');
@@ -187,6 +212,7 @@ const portalStat = document.querySelector('#portalStat')
 const sleepStat = document.querySelector('#sleepStat')
 const boredomStat = document.querySelector('#boredomStat')
 const treatButton = document.querySelector('#treatButton')
+const resetButton = document.querySelector('#reset')
 ///////////Query Selection for Pet Choice
 const type1 = document.querySelector('#type1')
 const type2 = document.querySelector('#type2')
@@ -195,8 +221,9 @@ const type4 = document.querySelector('#type4')
 ///////////Pet Choice event listeners
 type1.addEventListener('click', type1f)
 type2.addEventListener('click', type2f)
-// type3.addEventListener('click',)
-// type4.addEventListener('click',)
+type3.addEventListener('click', type3f)
+type4.addEventListener('click', type4f)
+resetButton.addEventListener(`click`, resetPage)
 ///////////Setting Stuff
 const foodSupply = document.querySelector('#supply')
 const sanityRate = document.querySelector('#sanityRate')
@@ -220,3 +247,12 @@ function ager(){
 ager();
 ////////////
 
+function endChoice(){
+    type1.remove();
+    type2.remove();
+    type3.remove();
+    type4.remove();
+}
+function resetPage(){
+    location.reload();
+}
