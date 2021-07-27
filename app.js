@@ -142,6 +142,36 @@ class Creature {
         treatButton.addEventListener('click', pet.treatAct)
     }
 }
+///////////Textbox
+const textBox = document.querySelector('#text');
+const petName = document.querySelector('#petName')
+const changeName = document.querySelector('#name')
+const userButton = document.querySelector('#nameRef')
+///////////Images
+const image = document.querySelector('#image')
+///////////Bars
+const hungerBar = document.querySelector('#test1')
+const sleepBar = document.querySelector('#test2')
+const boredomBar = document.querySelector('#test3')
+const sanityBar = document.querySelector('#test4')
+///////////Query Selection for display statistics on page about the pet.
+const countEl = document.querySelector('#counter');
+const hungerCt = document.querySelector('#hunger');
+const sleepCt = document.querySelector('#sleep');
+const boredomCt = document.querySelector('#boredom');
+const sanityCt = document.querySelector('#sanity');
+///////////Query Selection for buttons.
+const feedStat = document.querySelector('#feedStat')
+const portalStat = document.querySelector('#portalStat')
+const sleepStat = document.querySelector('#sleepStat')
+const boredomStat = document.querySelector('#boredomStat')
+const treatButton = document.querySelector('#treatButton')
+const resetButton = document.querySelector('#reset')
+///////////Query Selection for Pet Choice
+const type1 = document.querySelector('#type1')
+const type2 = document.querySelector('#type2')
+const type3 = document.querySelector('#type3')
+const type4 = document.querySelector('#type4')
 ///////////Functions defined for Pet choice event listeners.
 let pet = {};
 function type1f(){
@@ -182,36 +212,6 @@ function type4f(){
     pet.addingListeners();
     endChoice();
 }
-///////////Textbox
-const textBox = document.querySelector('#text');
-const petName = document.querySelector('#petName')
-const changeName = document.querySelector('#name')
-const userButton = document.querySelector('#nameRef')
-///////////Images
-const image = document.querySelector('#image')
-///////////Bars
-const hungerBar = document.querySelector('#test1')
-const sleepBar = document.querySelector('#test2')
-const boredomBar = document.querySelector('#test3')
-const sanityBar = document.querySelector('#test4')
-///////////Query Selection for display statistics on page about the pet.
-const countEl = document.querySelector('#counter');
-const hungerCt = document.querySelector('#hunger');
-const sleepCt = document.querySelector('#sleep');
-const boredomCt = document.querySelector('#boredom');
-const sanityCt = document.querySelector('#sanity');
-///////////Query Selection for buttons.
-const feedStat = document.querySelector('#feedStat')
-const portalStat = document.querySelector('#portalStat')
-const sleepStat = document.querySelector('#sleepStat')
-const boredomStat = document.querySelector('#boredomStat')
-const treatButton = document.querySelector('#treatButton')
-const resetButton = document.querySelector('#reset')
-///////////Query Selection for Pet Choice
-const type1 = document.querySelector('#type1')
-const type2 = document.querySelector('#type2')
-const type3 = document.querySelector('#type3')
-const type4 = document.querySelector('#type4')
 ///////////Pet Choice event listeners
 type1.addEventListener('click', type1f)
 type2.addEventListener('click', type2f)
