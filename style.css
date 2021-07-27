@@ -1,7 +1,9 @@
 body {
     background-position: center;
     text-align: center;
+    color: white;
     display: block;
+    background-image: url("https://wallup.net/wp-content/uploads/2019/09/08/630279-ragnarok-online-mmo-rpg-fantasy-action-adventure-1ragnarok-anime-fighting-game.jpg");
 }
 .stats {
     text-align: right;
