@@ -1,9 +1,3 @@
-///////////Setting intervals for calling function.
-// let dHungerV = null
-// let dSleepV = null
-// let dBoredomV = null
-// let dSanityV = null
-// let rateV = null
 ///////////Class Setup
 class Creature {
     constructor(name, stat, mod, stress, supply, treats){
@@ -245,8 +239,6 @@ function ager(){
       }, 1000);
 }
 ager();
-////////////
-
 function endChoice(){
     type1.remove();
     type2.remove();
